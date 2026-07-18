@@ -1,0 +1,20 @@
+---
+# tasks file for roles/backup
+
+- name: Create backup directory
+  file:
+    path: /backup
+    state: directory
+    mode: '0755'
+
+- name: Backup website
+  archive:
+    path: /var/www/html
+    dest: /backup/web_backup.tar.gz
+    format: gz
+
+- name: Backup MariaDB data directory
+  archive:
+    path: /var/lib/mysql
+    dest: /backup/db_backup.tar.gz
+    format: gz

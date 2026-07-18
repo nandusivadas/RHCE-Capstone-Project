@@ -1,0 +1,19 @@
+---
+- name: Install NFS utilities
+  dnf:
+    name: nfs-utils
+    state: present
+
+- name: Create mount point
+  file:
+    path: /shared
+    state: directory
+    mode: '0755'
+
+- name: Mount NFS share
+  mount:
+    path: /shared
+    src: 172.31.43.70:/shared
+    fstype: nfs
+    opts: defaults
+    state: mounted

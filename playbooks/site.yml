@@ -1,0 +1,51 @@
+---
+- hosts: all
+  become: yes
+  roles:
+    - users
+
+- hosts: web
+  become: yes
+  vars_files:
+    - ../group_vars/all.yml
+  roles:
+    - apache
+
+- hosts: database
+  become: yes
+  vars_files:
+    - ../group_vars/all.yml
+  roles:
+    - mariadb
+
+- hosts: file
+  become: yes
+  roles:
+    - nfs
+
+- hosts: web
+  become: yes
+  roles:
+    - nfs_client
+
+- hosts: all
+  become: yes
+  roles:
+    - security
+
+- hosts: web,database
+  become: yes
+  roles:
+    - backup
+
+- hosts: haproxy
+  become: yes
+  roles:
+    - haproxy
+
+- hosts: all
+  become: yes
+  roles:
+    - security
+    - node_exporter
+    - rsyslog

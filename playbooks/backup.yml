@@ -1,0 +1,10 @@
+---
+- hosts: web
+  become: yes
+  roles:
+    - backup
+
+- hosts: database
+  become: yes
+  roles:
+    - backup

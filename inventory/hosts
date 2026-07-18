@@ -1,0 +1,12 @@
+[web]
+web1
+web2
+
+[database_servers]
+database
+
+[file]
+fileserver
+
+[loadbalancer]
+haproxy

@@ -1,0 +1,50 @@
+---
+# tasks file for roles/node_exporter
+
+- name: Create node_exporter user
+  user:
+    name: node_exporter
+    shell: /sbin/nologin
+
+- name: Copy Node Exporter archive
+  copy:
+    src: node_exporter-1.9.1.linux-amd64/
+    dest: /tmp/node_exporter/
+
+- name: Install Node Exporter binary
+  copy:
+    src: node_exporter-1.9.1.linux-amd64/node_exporter
+    dest: /usr/local/bin/node_exporter
+    mode: '0755'
+
+- name: Create systemd service
+  copy:
+    dest: /etc/systemd/system/node_exporter.service
+    content: |
+      [Unit]
+      Description=Prometheus Node Exporter
+      After=network.target
+
+      [Service]
+      User=node_exporter
+      Group=node_exporter
+      ExecStart=/usr/local/bin/node_exporter
+
+      [Install]
+      WantedBy=multi-user.target
+
+- name: Reload systemd
+  systemd:
+    daemon_reload: yes
+
+- name: Enable Node Exporter
+  systemd:
+    name: node_exporter
+    enabled: yes
+    state: started
+- name: Open Node Exporter Port
+  ansible.posix.firewalld:
+    port: 9100/tcp
+    permanent: yes
+    state: enabled
+    immediate: yes

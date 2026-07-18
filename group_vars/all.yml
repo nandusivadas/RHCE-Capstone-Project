@@ -1,0 +1,9 @@
+server_name: rhce.local
+document_root: /var/www/rhce
+
+db_name: rhcedb
+db_user: rhceuser
+db_password: Redhat@123
+
+apache_package: httpd
+apache_service: httpd

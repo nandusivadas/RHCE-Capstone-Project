@@ -1,0 +1,32 @@
+---
+# tasks file for roles/haproxy
+
+- name: Install HAProxy
+  dnf:
+    name: haproxy
+    state: present
+
+- name: Copy HAProxy Configuration
+  copy:
+    src: haproxy.cfg
+    dest: /etc/haproxy/haproxy.cfg
+    owner: root
+    group: root
+    mode: '0644'
+
+- name: Enable HAProxy
+  service:
+    name: haproxy
+    enabled: yes
+
+- name: Start HAProxy
+  service:
+    name: haproxy
+    state: started
+
+- name: Open HTTP Port
+  ansible.posix.firewalld:
+    service: http
+    permanent: yes
+    state: enabled
+    immediate: yes

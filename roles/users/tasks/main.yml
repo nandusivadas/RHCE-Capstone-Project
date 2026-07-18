@@ -1,0 +1,27 @@
+---
+# tasks file for roles/users
+
+- name: Create devops group
+  group:
+    name: devops
+    state: present
+
+- name: Create devops user
+  user:
+    name: devops
+    group: devops
+    shell: /bin/bash
+    create_home: yes
+    state: present
+
+- name: Add devops user to wheel group
+  user:
+    name: devops
+    groups: wheel
+    append: yes
+
+- name: Copy SSH public key
+  authorized_key:
+    user: devops
+    state: present
+    key: "{{ lookup('file', 'id_ed25519.pub') }}"

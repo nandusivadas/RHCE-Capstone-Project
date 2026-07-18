@@ -1,0 +1,32 @@
+---
+# tasks file for roles/nfs
+
+- name: Install NFS utilities
+  dnf:
+    name: nfs-utils
+    state: present
+
+- name: Enable NFS Server
+  service:
+    name: nfs-server
+    enabled: yes
+
+- name: Start NFS Server
+  service:
+    name: nfs-server
+    state: started
+
+- name: Create NFS Shared Directory
+  file:
+    path: /shared
+    state: directory
+    mode: '0777'
+
+- name: Configure Exports
+  copy:
+    dest: /etc/exports
+    content: |
+      /shared *(rw,sync,no_root_squash)
+
+- name: Export NFS Share
+  command: exportfs -rav
