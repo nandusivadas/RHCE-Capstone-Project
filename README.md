@@ -173,32 +173,62 @@ ansible all -m ping
 
 ### 🗄️ MariaDB Configuration
 
+```bash
+sudo mysql
+```
+```bash
+SELECT User, Host FROM mysql.user;
+```
+```bash
+SHOW DATABASES;
+```
+
 ![MariaDB Configuration](screenshots/mariadb-configuration.png)
 
 ### 📂 NFS Configuration
+
+```bash
+mount | grep nfs
+```
+```bash
+df -h
+```
 
 ![NFS Configuration](screenshots/NFS-configuration.png)
 
 ### ⚖️ HAProxy Configuration
 
-![HAProxy Configuration](screenshots/HAProxy-browser-verification-web-server-01.png)
-![HAProxy Configuration](screenshots/HAProxy-browser-verification-web-server-02.png)
+![HAProxy Configuration](screenshots/HAProxy-browser-verification-Web-Server-01.png)
+![HAProxy Configuration](screenshots/HAProxy-browser-verification-Web-Server-02.png)
 
 ### 📊 Prometheus Dashboard
 
-![Prometheus Dashboard](screenshots/prometheus.png)
+![Prometheus Dashboard](screenshots/prometheus-dashboard-01.png)
+![Prometheus Dashboard](screenshots/prometheus-dashboard-02.png)
 
 ### 📈 Grafana Dashboard
 
-![Grafana Dashboard](screenshots/grafana.png)
+![Grafana Dashboard](screenshots/grafana-dashboard.png)
 
 ### 📝 rsyslog Configuration
 
-![rsyslog Configuration](screenshots/rsyslog.png)
+```bash
+sudo tail -f /var/log/messages
+```
+
+![rsyslog Configuration](screenshots/rsyslog-configuration.png)
 
 ### 💾 Backup Automation
 
-![Backup Automation](screenshots/backup.png)
+```bash
+crontab -l
+```
+![Backup Automation](screenshots/Backup-automation.png)
+
+```bash
+ls -lh /backup
+```
+![Backup Automation](screenshots/backup-verification.png)
 
 
 # 💼 Skills Demonstrated
