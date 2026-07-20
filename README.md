@@ -133,7 +133,7 @@ Backup Automation
 
 ### ☁️ Dynamic Inventory
 
-![Dynamic Inventory](screenshots/dynamic-inventory.png)
+![Dynamic Inventory](screenshots/Dynamic-Inventory-ansible-inventory --graph.png)
 
 ### ✅ Ansible Ping
 
