@@ -181,7 +181,8 @@ ansible all -m ping
 
 ### ⚖️ HAProxy Configuration
 
-![HAProxy Configuration](screenshots/HAProxy.png)
+![HAProxy Configuration](screenshots/HAProxy-browser-verification-web-server-01.png)
+![HAProxy Configuration](screenshots/HAProxy-browser-verification-web-server-02.png)
 
 ### 📊 Prometheus Dashboard
 
