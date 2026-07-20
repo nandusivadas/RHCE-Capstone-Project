@@ -125,15 +125,27 @@ Backup Automation
 
 ### 📁 Project Structure
 
+```bash
+tree
+```
+
 ![Project Structure](screenshots/project-structure.png)
 
 ### 📂 Static Inventory
+
+```bash
+vi inventory/hosts
+```
 
 ![Static Inventory](screenshots/static-inventory.png)
 
 ### ☁️ Dynamic Inventory
 
 The AWS EC2 dynamic inventory plugin automatically discovers EC2 instances in the **ap-south-1** region and groups them for Ansible management.
+
+```bash
+vi inventory/aws_ec2.yml
+```
 
 #### AWS EC2 Dynamic Inventory Configuration
 
@@ -149,6 +161,10 @@ ansible-inventory -i inventory/aws_ec2.yml --graph
 
 ### ✅ Ansible Ping
 
+```bash
+ansible all -m ping
+```
+
 ![Ansible Ping](screenshots/ansible-ping.png)
 
 ### 🌐 Apache Deployment
@@ -157,15 +173,15 @@ ansible-inventory -i inventory/aws_ec2.yml --graph
 
 ### 🗄️ MariaDB Configuration
 
-![MariaDB Configuration](screenshots/mariadb.png)
+![MariaDB Configuration](screenshots/mariadb-configuration.png)
 
 ### 📂 NFS Configuration
 
-![NFS Configuration](screenshots/nfs.png)
+![NFS Configuration](screenshots/NFS-configuration.png)
 
 ### ⚖️ HAProxy Configuration
 
-![HAProxy Configuration](screenshots/haproxy.png)
+![HAProxy Configuration](screenshots/HAProxy.png)
 
 ### 📊 Prometheus Dashboard
 
