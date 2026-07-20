@@ -125,19 +125,27 @@ Backup Automation
 
 ### 📁 Project Structure
 
+The project follows a modular Ansible role-based structure, making automation tasks organized, reusable, and easy to maintain.
+
 ```bash
 tree
 ```
 
 ![Project Structure](screenshots/project-structure.png)
 
+---
+
 ### 📂 Static Inventory
+
+The static inventory defines all managed nodes manually, grouping servers based on their roles for Ansible automation.
 
 ```bash
 vi inventory/hosts
 ```
 
 ![Static Inventory](screenshots/static-inventory.png)
+
+---
 
 ### ☁️ Dynamic Inventory
 
@@ -159,7 +167,11 @@ ansible-inventory -i inventory/aws_ec2.yml --graph
 
 ![Dynamic Inventory Graph](screenshots/dynamic-inventory-graph.png)
 
+---
+
 ### ✅ Ansible Ping
+
+Ansible connectivity was verified by successfully communicating with all managed nodes using the built-in ping module.
 
 ```bash
 ansible all -m ping
@@ -167,50 +179,83 @@ ansible all -m ping
 
 ![Ansible Ping](screenshots/ansible-ping.png)
 
+---
+
 ### 🌐 Apache Deployment
+
+Apache HTTP Server was deployed and configured using Ansible. The browser output confirms that the web servers are accessible and serving web content successfully.
 
 ![Apache Deployment](screenshots/apache-deployment.png)
 
+---
+
 ### 🗄️ MariaDB Configuration
+
+MariaDB was installed and configured through Ansible. The following commands verify the database service, users, and available databases.
 
 ```bash
 sudo mysql
 ```
+
 ```bash
 SELECT User, Host FROM mysql.user;
 ```
+
 ```bash
 SHOW DATABASES;
 ```
 
 ![MariaDB Configuration](screenshots/mariadb-configuration.png)
 
+---
+
 ### 📂 NFS Configuration
+
+Network File System (NFS) was configured to provide shared storage between servers. The mounted filesystem was verified successfully.
 
 ```bash
 mount | grep nfs
 ```
+
 ```bash
 df -h
 ```
 
 ![NFS Configuration](screenshots/NFS-configuration.png)
 
+---
+
 ### ⚖️ HAProxy Configuration
 
+HAProxy was configured as a load balancer to distribute incoming requests across multiple backend web servers, ensuring high availability.
+
 ![HAProxy Configuration](screenshots/HAProxy-browser-verification-Web-Server-01.png)
+
 ![HAProxy Configuration](screenshots/HAProxy-browser-verification-Web-Server-02.png)
+
+---
 
 ### 📊 Prometheus Dashboard
 
+Prometheus was configured to collect system and application metrics from all managed nodes for centralized monitoring.
+
 ![Prometheus Dashboard](screenshots/prometheus-dashboard-01.png)
+
 ![Prometheus Dashboard](screenshots/prometheus-dashboard-02.png)
+
+---
 
 ### 📈 Grafana Dashboard
 
+Grafana was integrated with Prometheus to visualize collected metrics through interactive dashboards.
+
 ![Grafana Dashboard](screenshots/grafana-dashboard.png)
 
+---
+
 ### 📝 rsyslog Configuration
+
+Centralized logging was implemented using **rsyslog**. The control server successfully receives and stores log messages from managed client nodes in real time.
 
 ```bash
 sudo tail -f /var/log/messages
@@ -218,19 +263,23 @@ sudo tail -f /var/log/messages
 
 ![rsyslog Configuration](screenshots/rsyslog-configuration.png)
 
+---
+
 ### 💾 Backup Automation
+
+Automated website and database backups were scheduled using a cron job. Backup archives were successfully created and stored in the backup directory.
 
 ```bash
 crontab -l
 ```
+
 ![Backup Automation](screenshots/Backup-automation.png)
 
 ```bash
 ls -lh /backup
 ```
-![Backup Automation](screenshots/backup-verification.png)
 
-
+![Backup Verification](screenshots/backup-verification.png)
 # 💼 Skills Demonstrated
 
 - Infrastructure Automation
