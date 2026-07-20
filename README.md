@@ -133,7 +133,19 @@ Backup Automation
 
 ### ☁️ Dynamic Inventory
 
-![Dynamic Inventory](screenshots/Dynamic-Inventory-ansible-inventory --graph.png)
+The AWS EC2 dynamic inventory plugin automatically discovers EC2 instances in the **ap-south-1** region and groups them for Ansible management.
+
+#### AWS EC2 Dynamic Inventory Configuration
+
+![AWS EC2 Dynamic Inventory Configuration](screenshots/dynamic-inventory-config.png)
+
+#### Dynamic Inventory Verification
+
+```bash
+ansible-inventory -i inventory/aws_ec2.yml --graph
+```
+
+![Dynamic Inventory Graph](screenshots/dynamic-inventory-graph.png)
 
 ### ✅ Ansible Ping
 
