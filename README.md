@@ -25,11 +25,8 @@ The infrastructure includes automated deployment of web, database, storage, load
 
 # 🏗️ Architecture Diagram
 
-> **Replace the image below with your architecture diagram**
 
-<p align="center">
-  <img src="architecture/architecture-diagram.png" alt="Architecture Diagram" width="900">
-</p>
+![Architecture Diagram](architecture/architecture-diagram.png)
 
 
 
@@ -124,24 +121,55 @@ Backup Automation
 
 
 
-# 📸 Project Screenshots
+## 📸 Project Screenshots
 
-Add screenshots for the following:
+### 📁 Project Structure
 
-- Project Structure
-- Static Inventory
-- Dynamic Inventory
-- Ansible Ping
-- Apache Deployment
-- MariaDB Configuration
-- NFS Configuration
-- HAProxy Configuration
-- Prometheus Dashboard
-- Grafana Dashboard
-- rsyslog Configuration
-- Backup Automation
-- Final Output
+![Project Structure](screenshots/project-structure.png)
 
+### 📂 Static Inventory
+
+![Static Inventory](screenshots/static-inventory.png)
+
+### ☁️ Dynamic Inventory
+
+![Dynamic Inventory](screenshots/dynamic-inventory.png)
+
+### ✅ Ansible Ping
+
+![Ansible Ping](screenshots/ansible-ping.png)
+
+### 🌐 Apache Deployment
+
+![Apache Deployment](screenshots/apache-deployment.png)
+
+### 🗄️ MariaDB Configuration
+
+![MariaDB Configuration](screenshots/mariadb.png)
+
+### 📂 NFS Configuration
+
+![NFS Configuration](screenshots/nfs.png)
+
+### ⚖️ HAProxy Configuration
+
+![HAProxy Configuration](screenshots/haproxy.png)
+
+### 📊 Prometheus Dashboard
+
+![Prometheus Dashboard](screenshots/prometheus.png)
+
+### 📈 Grafana Dashboard
+
+![Grafana Dashboard](screenshots/grafana.png)
+
+### 📝 rsyslog Configuration
+
+![rsyslog Configuration](screenshots/rsyslog.png)
+
+### 💾 Backup Automation
+
+![Backup Automation](screenshots/backup.png)
 
 
 # 💼 Skills Demonstrated
