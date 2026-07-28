@@ -307,7 +307,7 @@ docs/
 └── RHCE-Capstone-Project-Documentation.pdf
 ```
 
----
+
 
 # 👨‍💻 Author
 
@@ -315,12 +315,12 @@ docs/
 
 **Cloud & DevOps Enthusiast**
 
-- 🌐 GitHub: https://github.com/nandusivadas
-- 💼 LinkedIn: www.linkedin.com/in/nandu-sivadas98
----
+📧 Email: nandusivadas98@gmail.com
 
-<div align="center">
+🔗 LinkedIn: https://linkedin.com/in/nandusivadas98
+
+🐙 GitHub: https://github.com/nandusivadas
+
+🌐 Portfolio: https://nandusivadas.github.io/Portfolio/
 
 
-
-</div>
